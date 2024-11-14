@@ -5,7 +5,7 @@ dotenv.config();
 
 const { MONGODB_USER, MONGODB_PASS, MONGODB_DB } = process.env;
 
-const url = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@babyview.gea2i.mongodb.net/${MONGODB_DB}?retryWrites=true&w=majority&appName=BabyView`;
+const url = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@cluster0.q5pmxiu.mongodb.net/${MONGODB_DB}?retryWrites=true&w=majority&appName=Cluster0`;
 
 mongoose.connect(url, {
     tls: true,
