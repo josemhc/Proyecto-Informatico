@@ -69,7 +69,7 @@ export function SignupFormDemo({ onSignInClick }: SignupFormDemoProps) {
     try {
       // Enviar los datos al servidor para iniciar el proceso de registro
       const response = await fetch(
-        'http://localhost:5000/api/users/initiate-registration',
+        'http://192.168.60.11:5000/api/users/initiate-registration',
         {
           method: 'POST',
           headers: {

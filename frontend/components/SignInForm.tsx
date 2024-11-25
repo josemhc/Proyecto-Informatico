@@ -29,7 +29,7 @@ export function SignInFormDemo({ onSignUpClick }: SignInFormDemoProps) {
   const handleForgotPassword = async () => {
     try {
       const response = await fetch(
-        'http://localhost:5000/api/users/forgot-password',
+        'http://192.168.60.11:5000/api/users/forgot-password',
         {
           method: 'POST',
           headers: {

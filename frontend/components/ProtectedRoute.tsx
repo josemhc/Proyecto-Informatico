@@ -16,7 +16,7 @@ const ProtectedRoute = ({ children, allowedRoles, userId }: ProtectedRouteProps)
   useEffect(() => {
     const fetchUserRole = async (userId: string) => {
       try {
-        const response = await fetch(`http://localhost:5000/api/users/role/${userId}`);
+        const response = await fetch(`http://192.168.60.11:5000/api/users/role/${userId}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
