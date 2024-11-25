@@ -179,7 +179,7 @@ export const initiateRegistration = async (req, res) => {
             },
         });
 
-        const verificationLink = `http://localhost:3000/verify-email?token=${verificationToken}`;
+        const verificationLink = `http://192.168.60.11:5000/verify-email?token=${verificationToken}`;
 
         // Enviar el correo de verificación
         const mailOptions = {
@@ -257,7 +257,7 @@ export const sendPasswordResetEmail = async (req, res) => {
         });
 
         // Crear el enlace de restablecimiento de contraseña
-        const resetLink = `http://localhost:3000/ResetPassword?token=${resetToken}`;
+        const resetLink = `http://192.168.60.11:5000/ResetPassword?token=${resetToken}`;
 
         // Configurar las opciones del correo
         const mailOptions = {
