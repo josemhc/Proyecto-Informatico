@@ -18,14 +18,11 @@ RUN npm install
 # Copiar el resto de los archivos al contenedor
 WORKDIR /ECOMED4D
 COPY . .
-
-# Construir el frontend (Next.js necesita un build para producción)
-WORKDIR /ECOMED4D/frontend
-RUN npm run build
+RUN npm install
 
 # Exponer los puertos
 EXPOSE 3000 5000
 
 # Comando para iniciar ambos servicios
 WORKDIR /ECOMED4D
-CMD ["sh", "-c", "cd Backend && npm start & cd frontend && npm run start"]
+CMD ["sh", "-c", "cd Backend && npm run dev & cd frontend && npm run dev"]
