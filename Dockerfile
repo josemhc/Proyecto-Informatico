@@ -24,7 +24,7 @@ WORKDIR /ECOMED4D/frontend
 RUN npm run build
 
 # Exponer los puertos
-EXPOSE 3000 4000
+EXPOSE 3000 5000
 
 # Comando para iniciar ambos servicios
 WORKDIR /ECOMED4D
