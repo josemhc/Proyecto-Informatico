@@ -22,7 +22,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 // Configuración específica de CORS
 const corsOptions = {
-  origin: 'http://frontend:3000', // Reemplaza con el origen de tu frontend
+  origin: ['http://frontend:3000', 'http://192.168.60.11:3000'], // Reemplaza con el origen de tu frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true, // Permite el envío de cookies y credenciales
