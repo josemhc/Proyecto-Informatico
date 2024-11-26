@@ -32,7 +32,7 @@ export default function ResetPassword() {
         console.log('Enviando solicitud con token:', token);
         console.log('Enviando solicitud con contraseña:', password);
 
-        const response = await fetch("http://localhost:5000/api/users/reset-password", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/reset-password`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

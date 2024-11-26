@@ -66,7 +66,7 @@ export default function RegisterPatientComponent() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/patients/', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/patients/`, {
         method: 'POST',
         credentials: 'include',
         headers: {

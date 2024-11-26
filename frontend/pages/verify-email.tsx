@@ -12,7 +12,7 @@ const VerifyEmail = () => {
     if (token) {
       const verifyEmail = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/api/users/verify-email?token=${token}`);
+          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/verify-email?token=${token}`);
           const data = await response.json();
 
           if (response.ok) {

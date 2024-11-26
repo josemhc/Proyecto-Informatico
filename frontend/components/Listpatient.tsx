@@ -52,7 +52,7 @@ export default function PatientList() {
         }
 
         // Hacer la solicitud GET con las cookies incluidas
-        const response = await fetch('http://localhost:5000/api/patients', {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/patients`, {
           method: 'GET',
           credentials: 'include', // Incluir cookies en la solicitud
           headers: {
@@ -127,7 +127,7 @@ export default function PatientList() {
         formData.append('patientEmail', patient.email);
 
         const response = await fetch(
-          'http://localhost:5000/api/patients/send-file',
+          `${process.env.NEXT_PUBLIC_API_URL}/api/patients/send-file`,
           {
             method: 'POST',
             credentials: 'include',

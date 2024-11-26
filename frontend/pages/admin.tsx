@@ -43,7 +43,7 @@ export default function Admin() {
         if (decodedToken) {
           setUserId(decodedToken.id);
         }
-        const response = await fetch('http://localhost:5000/api/users', {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -62,7 +62,7 @@ export default function Admin() {
 
   const handleRoleChange = async (userId: string, newRole: string) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/users/role/${userId}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/role/${userId}`, {
         method: 'PUT',
         credentials: 'include',
         headers: {

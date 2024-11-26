@@ -42,7 +42,7 @@ export const SidebarComponent = ({ open, setOpen }: any) => {
   }, []);
 
   const fetchUserRole = async (userId: string) => {
-    const response = await fetch(`http://localhost:5000/api/users/role/${userId}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/role/${userId}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -54,7 +54,7 @@ export const SidebarComponent = ({ open, setOpen }: any) => {
     localStorage.removeItem('token');
                 router.push('/');
     try {
-      const response = await fetch("http://localhost:5000/api/users/logout" , {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/logout` , {
         method: "POST",
         credentials: "include",
       })
