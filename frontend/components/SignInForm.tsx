@@ -29,7 +29,7 @@ export function SignInFormDemo({ onSignUpClick }: SignInFormDemoProps) {
   const handleForgotPassword = async () => {
     try {
       const response = await fetch(
-        'http://192.168.60.11:5000/api/users/forgot-password',
+        'http://backend:5000/api/users/forgot-password',
         {
           method: 'POST',
           headers: {
@@ -89,7 +89,7 @@ export function SignInFormDemo({ onSignUpClick }: SignInFormDemoProps) {
     }
 
     try {
-      const response = await fetch(`http://192.168.60.11:5000/api/users/login`, {
+      const response = await fetch(`http://backend:5000/api/users/login`, {
         method: 'POST',
         credentials: 'include',
         headers: {

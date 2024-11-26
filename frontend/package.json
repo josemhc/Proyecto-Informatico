@@ -29,7 +29,14 @@
     "react-toastify": "^10.0.6",
     "shadcn-ui": "^0.9.2",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "@radix-ui/react-label": "^2.1.0",
+    "@react-three/fiber": "^8.17.8",
+    "@types/three": "^0.168.0",
+    "next-themes": "^0.3.0",
+    "simplex-noise": "^4.0.3",
+    "tailwindcss": "^3.4.13",
+    "three": "^0.168.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",

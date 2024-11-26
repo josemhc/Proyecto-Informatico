@@ -66,7 +66,7 @@ export default function RegisterPatientComponent() {
     }
 
     try {
-      const response = await fetch('http://192.168.60.11:5000/api/patients/', {
+      const response = await fetch('http://backend:5000/api/patients/', {
         method: 'POST',
         credentials: 'include',
         headers: {

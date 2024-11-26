@@ -32,7 +32,7 @@ export default function ResetPassword() {
         console.log('Enviando solicitud con token:', token);
         console.log('Enviando solicitud con contraseña:', password);
 
-        const response = await fetch("http://192.168.60.11:5000/api/users/reset-password", {
+        const response = await fetch("http://backend:5000/api/users/reset-password", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

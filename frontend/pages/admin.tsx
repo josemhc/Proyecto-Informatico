@@ -43,7 +43,7 @@ export default function Admin() {
         if (decodedToken) {
           setUserId(decodedToken.id);
         }
-        const response = await fetch('http://192.168.60.11:5000/api/users', {
+        const response = await fetch('http://backend:5000/api/users', {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -62,7 +62,7 @@ export default function Admin() {
 
   const handleRoleChange = async (userId: string, newRole: string) => {
     try {
-      const response = await fetch(`http://192.168.60.11:5000/api/users/role/${userId}`, {
+      const response = await fetch(`http://backend:5000/api/users/role/${userId}`, {
         method: 'PUT',
         credentials: 'include',
         headers: {
