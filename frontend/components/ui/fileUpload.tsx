@@ -93,7 +93,7 @@ export const FileUpload = ({
     setLoading(true);
 
     try {
-      const response = await axios.post("http://backend:5000/convert", formData, {
+      const response = await axios.post("http://localhost:5000/convert", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

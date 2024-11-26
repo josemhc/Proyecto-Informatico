@@ -43,7 +43,7 @@ export default function Patientfile() {
         if (decodedToken) {
         }
         // Hacer la solicitud GET con las cookies incluidas
-        const response = await fetch(`http://backend:5000/api/patients/${decodedToken.email}`, {
+        const response = await fetch(`http://localhost:5000/api/patients/${decodedToken.email}`, {
           method: 'GET',
           credentials: 'include', // Incluir cookies en la solicitud
           headers: {
