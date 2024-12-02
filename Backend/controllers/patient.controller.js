@@ -193,7 +193,11 @@ export const loginPatient = async (req, res) => {
         const token = jwt.sign({ id: patient._id, email: patient.email, name: patient.name }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
         // Se crea el token de acceso
-        res.cookie('token', token);
+        res.cookie('token', token, {
+            httpOnly: true,  // Asegura que la cookie solo pueda ser accedida por el servidor
+            secure: true,  // Asegura que la cookie se transmita solo en HTTPS
+            sameSite: 'None',  // Permite enviar cookies en solicitudes cross-origin
+        });
         res.status(201).json({
             id: patient._id,
             name: patient.name,

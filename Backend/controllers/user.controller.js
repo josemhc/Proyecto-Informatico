@@ -27,7 +27,12 @@ export const createUser = async (req, res) => {
 
         const token = jwt.sign({ id: newUser._id, email: newUser.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-        res.cookie('token', token);
+        res.cookie('token', token, {
+            httpOnly: true,  // Asegura que la cookie solo pueda ser accedida por el servidor
+            secure: true,  // Asegura que la cookie se transmita solo en HTTPS
+            sameSite: 'None',  // Permite enviar cookies en solicitudes cross-origin
+        }
+        );
         res.status(201).json({
             id: newUser._id,
             name: newUser.name,
@@ -134,7 +139,11 @@ export const loginUser = async (req, res) => {
         // Se genera el token de autenticación para el usuario
         const token = jwt.sign({ id: user._id, email: user.email, name: user.name }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-        res.cookie('token', token);
+        res.cookie('token', token, {
+            httpOnly: true,  // Asegura que la cookie solo pueda ser accedida por el servidor
+            secure: true,  // Asegura que la cookie se transmita solo en HTTPS
+            sameSite: 'None',  // Permite enviar cookies en solicitudes cross-origin
+        });
         res.status(201).json({
             id: user._id,
             name: user.name,
@@ -362,6 +371,10 @@ export const getUserRole = async (req, res) => {
 export const logout = async (req, res) => {
     res.cookie('token', "", {
         expires: new Date(0),
+        httpOnly: true,  // Asegura que la cookie solo pueda ser accedida por el servidor
+        secure: true,  // Asegura que la cookie se transmita solo en HTTPS
+        sameSite: 'None',  // Permite enviar cookies en solicitudes cross-origin
+        
     });
     return res.sendStatus(200);
 }
