@@ -12,5 +12,5 @@ COPY . .
 # Exponer el puerto del frontend
 EXPOSE 3000
 
-# Comando para iniciar el frontend
+# Ejecutar en modo producción
 CMD ["npm", "run", "dev"]
