@@ -188,7 +188,7 @@ export const initiateRegistration = async (req, res) => {
             },
         });
 
-        const verificationLink = `http://192.168.60.11:3000/verify-email?token=${verificationToken}`;
+        const verificationLink = `https://ecomed-frontend-1-0.onrender.com/verify-email?token=${verificationToken}`;
 
         // Enviar el correo de verificación
         const mailOptions = {
