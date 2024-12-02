@@ -266,7 +266,7 @@ export const sendPasswordResetEmail = async (req, res) => {
         });
 
         // Crear el enlace de restablecimiento de contraseña
-        const resetLink = `http://192.168.60.11:3000/ResetPassword?token=${resetToken}`;
+        const resetLink = `https://ecomed-frontend-1-0.onrender.com//ResetPassword?token=${resetToken}`;
 
         // Configurar las opciones del correo
         const mailOptions = {
