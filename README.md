@@ -33,7 +33,10 @@ http://localhost:3000
 
 ### Tener en cuenta
 
-Asegurese de que la variable de entorno NEXT_PUBLIC_API_URL apunte a la direccion IP de la maquina en la que se encuentra el proyecto.
+Asegurese de que las variable de entorno esten definidas:
+
+NEXT_PUBLIC_API_URL apunta a la direccion IP de la maquina en la que se encuentra el proyecto.
+Las variables de entorno del backend deben estar implementadas
 
 Luego utilice un archivo docker-compose.yml para levantar los dos servicios (Backend y Frontend) a partir de los Dockerfile que se encuentran en sus respectivas carpetas
 
