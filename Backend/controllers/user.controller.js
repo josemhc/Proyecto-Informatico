@@ -6,6 +6,7 @@ import nodemailer from 'nodemailer';
 import crypto from 'crypto';
 import TempUser from '../models/tempUser.model.js';
 import ResetPasswordUser from '../models/resetPasswordUserModel.js';
+import { URL } from "../config.js";
 
 export const createUser = async (req, res) => {
     try {
@@ -188,7 +189,7 @@ export const initiateRegistration = async (req, res) => {
             },
         });
 
-        const verificationLink = `https://ecomed-frontend-1-0.onrender.com/verify-email?token=${verificationToken}`;
+        const verificationLink = `${URL}/verify-email?token=${verificationToken}`;
 
         // Enviar el correo de verificación
         const mailOptions = {
@@ -266,7 +267,7 @@ export const sendPasswordResetEmail = async (req, res) => {
         });
 
         // Crear el enlace de restablecimiento de contraseña
-        const resetLink = `https://ecomed-frontend-1-0.onrender.com//ResetPassword?token=${resetToken}`;
+        const resetLink = `${URL}/ResetPassword?token=${resetToken}`;
 
         // Configurar las opciones del correo
         const mailOptions = {
